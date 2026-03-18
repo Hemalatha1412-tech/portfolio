@@ -832,17 +832,8 @@ function doSend(){
   if(!n||!e||!m){document.getElementById('c-err').style.display='block';return}
   const sub=encodeURIComponent('Portfolio Inquiry from '+n);
   const bod=encodeURIComponent('Hi Hemalatha,\n\nFrom: '+n+'\nEmail: '+e+'\n\nMessage:\n'+m+'\n\nBest regards,\n'+n);
-  window.location.href='mailto:hemalathashivakumar14@gmail.com?subject='+sub+'&body='+bod;
+  const _a=document.createElement('a');
+  _a.href='mailto:hemalathashivakumar14@gmail.com?subject='+sub+'&body='+bod;
+  _a.style.display='none';document.body.appendChild(_a);_a.click();document.body.removeChild(_a);
   setTimeout(()=>{
-    document.getElementById('c-ok').style.display='block';
-    document.getElementById('fn').value='';
-    document.getElementById('fe').value='';
-    document.getElementById('fm').value='';
-  },400);
-}
-document.getElementById('fm').addEventListener('keydown',e=>{
-  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doSend()}
-});
-</script>
-</body>
-</html>
+    document.getElementById('c-ok').st
